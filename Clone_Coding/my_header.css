@@ -1,0 +1,42 @@
+body, html {
+    margin: 0;
+}
+
+.menu {
+    background-color: rgb(37, 37, 83);
+    color: beige;
+    padding: 30px 10px 30px 10px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#logo {
+    display: flex;
+    flex: 2 1 auto;
+    justify-content: flex-start;    
+}
+
+.contents {
+    display: flex;
+    flex: 6 1 auto;
+    /* align-items: center 이건 왜 적용이 안돼 ? */
+    justify-content: space-evenly;
+    
+}
+
+.icon {
+    display: flex;
+    flex: 2 1 auto;
+    justify-content: flex-end;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+}
+
+.article {
+    background-color: beige;
+    width: 100vw;
+    height: 100vh;
+}
