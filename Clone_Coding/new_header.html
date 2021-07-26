@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="new_header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/4b15edcc6c.js" crossorigin="anonymous"></script>
+    <script src="new_header.js" defer></script> <!--defer 자바스크립트때문에 화면 로드 길어지는 거 방지-->
+    <title>Nav bar</title>
+</head>
+<body>
+    <!--의미없이 div 태그 남발하지 마세요 ! Semantic(의미있는) 태그 사용 명심 !-->
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <i class="fas fa-satellite"></i>
+            <a href="#">Front-end developer</a>
+        </div>
+
+        <ul class="navbar__menu">
+            <li><a href="">Home</a></li>
+            <li><a href="">Gallery</a></li>
+            <li><a href="">Studying</a></li>
+            <li><a href="">FAQ</a></li>
+            <li><a href="">Booking</a></li>
+        </ul>
+
+        <ul class="navbar__icons">
+            <li><i class="fab fa-twitter"></i></li>
+            <li><i class="fab fa-facebook"></i></li>
+        </ul>
+
+        <!--이 햄버거 메뉴는 flex-box로 구성하기 보단 수동적으로 위쪽에 고정시켜줄꺼임-->
+        <!--현재 문서의 흐름에서 벗어나서 오른쪽 위로 가야함 !! -> position-->
+        <a href="#" class="navbar__togglebutton">
+            <i class="fas fa-bars"></i>
+        </a>
+    </nav>
+</body>
+</html>
