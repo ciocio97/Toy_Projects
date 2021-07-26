@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    /* 모든 anchor태그에 기본적으로 들어가는 밑줄표시+색 다른 거 없애주기 */
+    color: beige;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;  
+    /* justify-content가 row축을 기준으로 삼으니까
+     * align-items는 이와 반대되는 축(column축)을 기준으로 삼는다 */
+
+    background-color: rgb(37, 37, 83);
+    padding: 8px 12px;
+    /* 양 옆에 붙어있는 아이들 띄워주는 padding 왼 오 */
+}
+
+.navbar__logo {
+    font-size: 24px;
+    color: beige;
+}
+
+.navbar__logo i {
+    color: orange;
+}
+
+.navbar__menu {
+    display: flex;
+    list-style: none;
+    /* ul태그 때문에 붙었던 dot들이 다 없어지는 속성 */
+    padding-left: 0;
+    /* 나도 진짜 궁금한데, 내가 넣지도 않은 padding값이 왜 들어가있어서, 직접 0으로 설정해줘야하는거임 ?*/
+    /* 그 답을 찾았다 ! menu의 list태그들 때문에 list-style을 없애줘도 list-padding값들이 남아 있는거다 */
+}
+
+/* 나는 navbar 전체에 padding값을 줬는데, 여긴 content li 하나하나에 padding값을 줘서 관리하네 */
+/* padding을 주면, 클릭할 수 있는 범위가 넓어지고 margin을 주면 클릭할 수 있는 범위가 좁아진다 */
+.navbar__menu li {
+    padding: 8px 12px;
+}
+
+.navbar__menu li:hover {
+    background-color: orange;
+    border-radius: 5px;
+}
+
+.navbar__icons {
+    list-style: none;
+    color: beige;
+    display: flex;
+    padding-left: 0;
+    /* 여기도 애들 list로 만들었으니까 남은 padding값 빼줍시다 */
+}
+
+.navbar__icons li {
+    padding: 8px 12px;
+}
+
+/* 로고 옆 메뉴바(햄버거)를 만들어보자 ! */
+.navbar__togglebutton {
+    display: none;  /* 일단은 지워놓고 ! */
+    position: absolute;
+    right: 32px;    /* 오른쪽에서 32px떨어진 곳에 붙여줘 ! */
+    font-size: 24px;
+    color: orange;
+}
+
+/* 반응형으로 만들기 */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+
+    .navbar__menu {
+        display: none;  /* 일단은 지워놓고 ! */
+        flex-direction: column;
+        align-items: center;  /* 내가 원하는대로 메뉴들이 가운데 정렬이 안된다 */
+        width: 100%;          /* 왜? 메뉴바의 width가 충분히 길지 않기 때문 -> 100%로 늘려준다 */
+    }
+
+    .navbar__menu li {
+        width: 100%;          /* highlight 시켜주는 너비도 늘려준다 */
+                              /* 문제 -> 박스 width를 늘려주면, text는 기본적으로 왼쪽 정렬로 변한다 */
+        text-align: center;   /* text 다시 중앙정렬해주면 되지 ~! 허허 참 css 참 */
+    }
+
+    .navbar__icons {
+        display: none;  /* 일단은 지워놓고 ! */
+        /* 현재 icon들은 column방향이 아니라 row방향으로 정렬해야하기 때문에 */
+        /* 즉, 그들 축과 무조건 반대되는 방향으로 정렬하는 align-items가 아니라 */
+        /* 그 상태에서 정렬하는 justify-content를 써야한다 */
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar__togglebutton {
+        display: block;  /* 원하는 width 길이가 되면 보여주자 ! */
+    }
+
+    .navbar__menu.active,
+    .navbar__icons.active {
+        display: flex;
+    }
+
+}
+
+
