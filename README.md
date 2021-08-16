@@ -1,4 +1,4 @@
-Toy_Projects  미리보기
+Toy_Projects
 =========================
 
 
