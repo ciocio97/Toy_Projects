@@ -8,7 +8,7 @@
 - **Toy projects**
 
 
-  🔒 <a href="http://127.0.0.1:5500/Education_in_CodeStates/21.07.27%20calculator-master/calculator.html" target="_blank">_JS 계산기_</a>
+  🔒 <a href="http://127.0.0.1:5500/Calculator/calculator.html" target="_blank">_JS 계산기_</a>
 
   🔒 <a href="http://127.0.0.1:5500/Mini_Bulletin_board/index.html" target="_blank">_미니 댓글창_</a>
 
